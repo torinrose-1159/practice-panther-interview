@@ -2,6 +2,7 @@ import pandas as pd
 import datetime as dt
 
 def assignedTo(initials):
+    
     match initials:
         case "GM":
             return "Gabe Michel"
@@ -15,7 +16,7 @@ def assignedTo(initials):
             return "Tim Mint"
     
     # Checks for any initials outside of the expected values and does NOT assign to Gabe Michel - needs to be reviewed
-    if(type(initials) == str):
+    if(type(initials) == str & len(initials.strip()) > 0):
         print(f"Unrecognized initials found in the 'Assigned' row: {initials}")
         return
     
